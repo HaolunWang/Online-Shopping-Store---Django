@@ -12,7 +12,6 @@ The features are the basic required features and some optional features.
 The main page have a login link. Either users and superusers can be access to this site. 
 
 Users should register the username and password before login. If the user using wrong username or password is will show an 
-
 invalid info.
 
 Once registered，users are able to view the products list and users' orders while adding order with place order function.
@@ -36,7 +35,6 @@ The second step: put "bootstrap3" in INSTALLEDAPP in setting.py
 The last step: put three lines "{% load bootstrap3 %}", "{% load bootstrap3_css %}", "{% load bootstrap3_javascript %}" in the html files that needed
 
 If you also meet some issues such as Python version while installing the bootstrap on PyCharm, I highly recommend you to look 
-
 at these links:
 
 https://wsvincent.com/install-python3-mac/
