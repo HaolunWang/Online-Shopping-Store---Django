@@ -1,0 +1,19 @@
+{% extends 'myapp/base.html' %}
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h1>{% block myhdg %}User's orders{% endblock %}</h1>
+{% block body_block %}
+{% if myorder %}
+<ol>
+ {% for item in myorder %}
+     <p> Product:<a href="{%url 'productdetail' item.id%}">{{ item.product}}</a> </p>
+     <p> Number:{{ item.num_units}} </p>
+     <p> Order status:{{ item.order_status}} </p>
+ {% endfor %}
+ </ol>
+ {% else %}
+ <strong>You have not placed any order here.</strong>
+    <p><a href="/myapp/products/ ">Products list</a></p>
+{% endif %}
+{% endblock %}

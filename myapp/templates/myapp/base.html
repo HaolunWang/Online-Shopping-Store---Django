@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+ <head>
+ <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css'%}" />
+ <title>Online Store APP - {% block title %}Welcome!{% endblock %}</title>
+ </head>
+ <body>
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+ <div>
+ {% if user.is_authenticated %}
+ <h1>{% block myhdg %}Hello {{ request.user.get_full_name }} {% endblock %}</h1>
+     {% block body_block_1 %}
+         <p><a href="/logout/">Logout</a></p>
+         <p><a href="/myorder/">User's orders</a></p>
+     {% endblock %}
+ {% else %}
+ <h1>{% block theBlock %}Hello Guest {% endblock %}</h1>
+     {% block body_block_2 %}
+         <p>You are not logged in</p>
+         <a href="/login/">Login</a>
+     {% endblock %}
+ {% endif %}
+ {% block body_block %} {% endblock %}
+</div>
+ <hr />
+ <div>
+ <ul>
+<li class="hbar1"><a href="/myapp/about/">Find out about this
+site</a></li>
+ </ul>
+ </div>
+ </body>
+</html>

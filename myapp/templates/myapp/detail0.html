@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+ <meta charset="UTF-8">
+ <title>Online Store APP</title>
+</head>
+<body>
+ {% if category %}
+ <h2>List of Categories</h2>
+
+     <p>Name: {{ category.name}}</p>
+     <p>Warehouse: {{ category.warehouse}}</p>
+     <ol>
+ {% for cat in list %}
+     <li> {{ cat.name}} </li>
+ {% endfor %}
+ </ol>
+
+ {% else %}
+ <strong>There are no available categories!</strong>
+ {% endif %}
+<p><a href="{%url 'index'%}">Main page</a></p>
+</body>
+</html>

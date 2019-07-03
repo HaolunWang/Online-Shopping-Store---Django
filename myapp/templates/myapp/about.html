@@ -1,0 +1,11 @@
+{% extends "myapp/base.html" %}
+<title>Online Store APP - {% block title %}Order Now{% endblock %}</title>
+{% block body_block %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript%}
+    <p>This is an Online Store APP.</p>
+    {% comment %}<p><a href="/">Main Page</a></p>{% endcomment %}
+<p><a href="{%url 'index'%}">Main page</a></p>
+<p><a href="/myapp/products/ ">Products</a></p>
+ {% endblock %}

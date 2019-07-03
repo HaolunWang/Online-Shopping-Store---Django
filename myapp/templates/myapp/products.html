@@ -1,0 +1,23 @@
+{% extends "myapp/base.html" %}
+<title>Online Store APP - {% block title %}Welcome{% endblock %}</title>
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+{% block body_block %}
+    {% if prodlist %}
+ <h2>List of Products</h2>
+     <ol>
+ {% for item in prodlist %}
+     <p> Category:{{ item.category}} </p>
+     <p> Name:<a href="{%url 'productdetail' item.id%}">{{ item.name}}</a> </p>
+     <p> Price:{{ item.price }} </p>
+     <p> Stock: {{ item.stock }}</p>
+
+ {% endfor %}
+ </ol>
+
+ {% else %}
+ <strong>There are no available categories!</strong>
+ {% endif %}
+<p><a href="{%url 'place_order'%}">Place Order</a></p>
+ {% endblock %}

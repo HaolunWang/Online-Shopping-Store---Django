@@ -1,0 +1,24 @@
+{% extends "myapp/base.html" %}
+{% comment %}{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}{% endcomment %}
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h1>{% block myhdg %}Hello {{ request.user.get_full_name }} {% endblock %}</h1>
+    {% block body_block %}
+    {% comment %}{% if user.is_authenticated %}{% endcomment %}
+ {% if cat_list %}
+ <h2>List of Categories</h2>
+ <ol>
+ {% for cat in cat_list %}
+     <li> <a href="{%url 'detail' cat.id%}">{{ cat.name}}</a> </li>
+ {% endfor %}
+ </ol>
+ {% else %}
+ <p>There are no available categories!</p>
+ {% endif %}
+        <p><a href="/myapp/products/ ">Products list</a></p>
+<p><a href="{%url 'about'%}">About page</a></p>
+    {% comment %}{% endif %}{% endcomment %}
+    {% endblock %}

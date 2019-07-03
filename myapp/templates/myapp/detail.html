@@ -1,0 +1,22 @@
+{% extends "myapp/base.html" %}
+<title>Online Store APP - {% block title %}Best Choice{% endblock %}</title>
+{% block body_block %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript%}
+    {% if category %}
+ <h2>List of Categories</h2>
+
+     <p>Name: {{ category.name}}</p>
+     <p>Warehouse: {{ category.warehouse}}</p>
+     <ol>
+ {% for cat in list %}
+     <li> {{ cat.name}} </li>
+ {% endfor %}
+ </ol>
+
+ {% else %}
+ <strong>There are no available categories!</strong>
+ {% endif %}
+<p><a href="{%url 'index'%}">Main page</a></p>
+ {% endblock %}

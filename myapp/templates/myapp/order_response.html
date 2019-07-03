@@ -1,0 +1,9 @@
+{% extends "myapp/base.html" %}
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h1>{% block myhdg %}Hello {{ request.user.get_full_name }} {% endblock %}</h1>
+    {% block body_block %}
+        {{ msg }}
+<p><a href="{%url 'index'%}">Main page</a></p>
+ {% endblock %}

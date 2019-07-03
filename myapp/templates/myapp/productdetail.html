@@ -1,0 +1,17 @@
+{% extends "myapp/base.html" %}
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h1>{% block myhdg %}Hello {{ request.user.get_full_name }}{% endblock %}</h1>
+    {% block body_block %}
+<p>Name：{{ item.name }}</p>
+        <p>Price：{{ item.price }}</p>
+        <p>Interested：{{ item.interested }}</p>
+        <p>Available：{{ item.available }}</p>
+{% if  item.available == 0 %}
+    <p> {{ item.name }} is not available</p>
+        {% endif %}
+
+<p><a href="{%url 'index'%}">Main page</a></p>
+
+    {% endblock %}

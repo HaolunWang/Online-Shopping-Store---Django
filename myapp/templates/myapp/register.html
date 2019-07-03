@@ -1,0 +1,24 @@
+{% extends 'myapp/base.html' %}
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h1>{% block myhdg %}Hello, you can register here{% endblock %}</h1>
+{% block body_block %}
+    <h2>Registration</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Sign Up</button>
+    </form>
+{% endblock %}

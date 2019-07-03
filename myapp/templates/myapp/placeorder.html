@@ -1,0 +1,11 @@
+ {% load bootstrap3 %}
+ {% bootstrap_css %}
+ {% bootstrap_javascript%}
+<h2>You can place an order here</h2>
+<form action="order_response.html" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Submit" />
+</form>
+<p><a href="/myapp/products/ ">More Products</a></p>
+<p><a href="{%url 'index'%}">Main page</a></p>
