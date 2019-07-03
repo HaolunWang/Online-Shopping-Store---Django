@@ -2,13 +2,9 @@
 
 Description:
 
-This project is based on campus project, and it can represent the products information and it can also show the registration,
+This project is based on campus project, and it can represent the products information and it can also show the registration, login layouts and users can place the orders and view the orders that they purchased as well. 
 
-login layouts and users can place the orders and view the orders that they purchased as well. 
-
-All in all, this project is a course - based demo, it has the bootstrap to render, 
-
-it looks simple but it is actually a skeleton website of real online shopping store like Amazon, e - bay.
+All in all, this project is a course - based demo, it has the bootstrap to render, it looks simple but it is actually a skeleton website of real online shopping store like Amazon, e - bay.
 
 I hope it will help you (especially for students group) a lot.
 
